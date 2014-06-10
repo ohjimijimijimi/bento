@@ -19,7 +19,7 @@
         " keyboard-configuration/variant=USA<wait>",
         " locale=en_US<wait>",
         " netcfg/get_domain=vm<wait>",
-        " netcfg/get_hostname=vagrant<wait>",
+        " netcfg/get_hostname=bentobox<wait>",
         " noapic<wait>",
         " preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ubuntu-14.04/preseed.cfg<wait>",
         " -- <wait>",
@@ -35,9 +35,9 @@
       "iso_url": "{{user `mirror`}}/14.04/ubuntu-14.04-server-amd64.iso",
       "output_directory": "packer-bentobox-ubuntu-14.04-amd64-virtualbox",
       "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
-      "ssh_password": "bentobox",
+      "ssh_password": "vagrant",
       "ssh_port": 22,
-      "ssh_username": "bentobox",
+      "ssh_username": "vagrant",
       "ssh_wait_timeout": "10000s",
       "type": "virtualbox-iso",
       "vboxmanage": [
@@ -61,12 +61,12 @@
         ]
       ],
       "virtualbox_version_file": ".vbox_version",
-      "vm_name": "packer-benntobox-ubuntu-14.04-amd64"
+      "vm_name": "packer-bentobox-ubuntu-14.04-amd64"
     }
   ],
   "post-processors": [
     {
-      "output": "../builds/{{.Provider}}/opscode_ubuntu-14.04_chef-{{user `chef_version`}}.box",
+      "output": "../builds/{{.Provider}}/bentobox_ubuntu-14.04_chef-{{user `chef_version`}}.box",
       "type": "vagrant"
     }
   ],
