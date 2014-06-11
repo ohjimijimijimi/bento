@@ -25,7 +25,7 @@ sed -i 's/\(AcceptEnv LANG LC_\*\)/#\1/' /etc/ssh/sshd_config
 # apt-get install -y build-essential
 
 # fix VBoxGuestAdditions path
-ln -s /opt/VBoxGuestAdditions-*/lib/VBoxGuestAdditions /usr/lib/VBoxGuestAdditions
-
-# install LXDE
-apt-get install lubuntu-desktop
+#ln -s /opt/VBoxGuestAdditions-*/lib/VBoxGuestAdditions /usr/lib/VBoxGuestAdditions
+#
+## install LXDE
+#apt-get install lubuntu-desktop
